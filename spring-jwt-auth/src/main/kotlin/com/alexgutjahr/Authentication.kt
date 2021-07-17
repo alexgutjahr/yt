@@ -42,7 +42,7 @@ class JwtAuthenticationManager(
     val username = jwtSupport.getUsername(token)
     val user = users.findByUsername(username).awaitSingleOrNull()
 
-    if(jwtSupport.isValid(token, user)) {
+    if (jwtSupport.isValid(token, user)) {
       return UsernamePasswordAuthenticationToken(user!!.username, user.password, user.authorities)
     }
 
