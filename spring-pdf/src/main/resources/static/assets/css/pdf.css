@@ -1,0 +1,54 @@
+@page {
+    margin: 0;
+    size: A4;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0;
+}
+
+.sheet {
+    box-sizing: border-box;
+    margin: 0;
+    overflow: hidden;
+    page-break-after: always;
+    position: relative;
+}
+
+body.A4 .sheet {
+    height: 296mm;
+    width: 210mm;
+}
+
+.sheet.padding-10mm {
+    padding: 10mm;
+}
+
+@media screen {
+    body {
+        background: #e0e0e0;
+    }
+    .sheet {
+        background: white;
+        box-shadow: 0 .5mm 2mm rgba(0,0,0,.3);
+        margin: 5mm auto;
+    }
+}
+
+@media print {
+    body.A4 {
+        width: 210mm;
+    }
+}
+
+.logo {
+    position: relative;
+}
+
+.logo img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+}

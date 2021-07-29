@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <title>Spring Boot PDF Letter</title>
+        <link data-th-href="@{/assets/css/pdf.css}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    </head>
+    <body class="A4">
+        <section class="sheet padding-10mm">
+            <div class="logo">
+                <img data-th-src="@{/assets/img/spring-logo.svg}">
+            </div>
+            <h3>Hello folks!</h3>
+            <p>This is how you render nice PDFs.</p>
+        </section>
+        <section class="sheet padding-10mm">
+            <div class="logo">
+                <img data-th-src="@{/assets/img/spring-logo.svg}">
+            </div>
+            <p>This is the 2nd page.</p>
+        </section>
+    </body>
+</html>
