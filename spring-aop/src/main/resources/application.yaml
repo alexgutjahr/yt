@@ -1,0 +1,8 @@
+twitter:
+  key: key
+  secret: secret
+  bearer: bearer
+
+spring:
+  config:
+    import: optional:secrets.yaml
