@@ -6,24 +6,25 @@ import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.Table
 
-data class User(val id: String, val name: String)
-
 @Entity
 @Table(name = "users")
-class UserEntity(@Id @NaturalId val id: String) {
+class User(
+    @Id @NaturalId
+    val email: String? = null
+) {
 
     lateinit var name: String
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other == null || Hibernate.getClass(this) != Hibernate.getClass(other)) return false
-        other as UserEntity
+        other as User
 
-        return id == other.id
+        return email == other.email
     }
 
-    override fun hashCode(): Int = id.hashCode()
+    override fun hashCode(): Int = email.hashCode()
 
-    fun asUser(): User = User(id, name)
+    override fun toString() = "$name <$email>"
 
 }

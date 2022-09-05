@@ -7,19 +7,18 @@ import org.springframework.context.annotation.Bean
 import java.util.*
 
 @SpringBootApplication
-class SpringApiPaginationApplication {
+class SpringCrudApiApplication {
 
     @Bean
     fun run(repo: UserRepository) = CommandLineRunner {
-        for (count in 1..100) {
-            repo.save(UserEntity(UUID.randomUUID().toString()).apply {
-                this.name = "User $count"
+        for (count in 1..10) {
+            repo.save(User("${UUID.randomUUID()}@alexgutjahr.com").apply {
+                this.name = "Anonymous"
             })
         }
     }
-
 }
 
 fun main(args: Array<String>) {
-    runApplication<SpringApiPaginationApplication>(*args)
+    runApplication<SpringCrudApiApplication>(*args)
 }
